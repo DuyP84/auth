@@ -24,6 +24,8 @@ import { useSearchParams } from "next/navigation";
 
 export const LoginForm = () => {
   const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get("callbackUrl");
+
   const urlError =
     searchParams.get("error") === "OAuthAccountNotLinked"
       ? "Email already taken with different provider!"
@@ -46,7 +48,8 @@ export const LoginForm = () => {
     setSuccess("");
 
     startTransition(() => {
-      login(values).then((data) => {
+      login(values, callbackUrl)
+      .then((data) => {
         //ADD 2FA Verify email
         if(data?.error){
           form.reset();
@@ -69,7 +72,7 @@ export const LoginForm = () => {
   return (
     <CardWrapper
       headerLabel="Welcom back!"
-      backButtonLabel="Dont have an account? Create now baby!"
+      backButtonLabel="Dont have an account? Create now!"
       backButtonHref="/auth/register"
       showSocial
     >

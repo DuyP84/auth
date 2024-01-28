@@ -9,7 +9,7 @@ export const sendVerificationEmail =async (email: string, token: string) => {
         from: "onboarding@resend.dev",
         to: email,
         subject: 'Confirm your email',
-        html: `<p>Click <a href="${confirmLink}">here</a> baby</p>`
+        html: `<p>Click <a href="${confirmLink}">here</a> to confirm </p>`
     })
 }
 
@@ -20,7 +20,7 @@ export const sendPasswordResetEmail =async (email: string, token: string) => {
         from: "onboarding@resend.dev",
         to: email,
         subject: 'Reset your password',
-        html: `<p>Click <a href="${resetLink}">here</a> baby</p>`
+        html: `<p>Click <a href="${resetLink}">here</a> </p>`
     })
 }
 
@@ -31,6 +31,6 @@ export const sendTwoFactorTokenEmail =async (email: string, token: string) => {
         from: "onboarding@resend.dev",
         to: email,
         subject: '2FA code ne be yeu',
-        html: `<p>Your 2FA code: ${token} </p>`
+        html: `<p>Your 2FA code: ${token}  </p>`
     })
 }

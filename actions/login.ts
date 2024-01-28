@@ -17,7 +17,7 @@ import { db } from "@/lib/db";
 import { getTwoFactorConfirmationById } from "@/data/two-factor-confirmation";
 import { toast } from "sonner";
 
-export const login = async (values: z.infer<typeof LoginSchema>) => {
+export const login = async (values: z.infer<typeof LoginSchema>, callbackUrl?: string | null) => {
   console.log(values);
   const validatedFields = LoginSchema.safeParse(values);
 
@@ -98,7 +98,7 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
     await signIn("credentials", {
       email,
       password,
-      redirectTo: DEFAULT_LOGIN_REDIRECT,
+      redirectTo: callbackUrl ||  DEFAULT_LOGIN_REDIRECT,
     });
   } catch (error) {
     if (error instanceof AuthError) {
