@@ -83,7 +83,7 @@ const SettingsPage = () => {
                       <Input
                         {...field}
                         disabled={isPending}
-                        placeholder="djtmemay"
+                        placeholder="Duy"
                       />
                     </FormControl>
                     <FormMessage />
@@ -100,7 +100,7 @@ const SettingsPage = () => {
                       <Input
                         {...field}
                         disabled={isPending}
-                        placeholder="djtmemay@gg.com"
+                        placeholder="duy@mail.com"
                         type="email"
                       />
                     </FormControl>

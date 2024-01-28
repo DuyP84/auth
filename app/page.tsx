@@ -14,10 +14,10 @@ export default function Home() {
         <h1 className={cn("text-6xl font-semibold text-white drop-shadow-md", font.className,
         
         )}>
-          Fuck
+          Authhh
         </h1>
         <p className="text-white text-lg">
-          Authentication simple services!!!
+          Authentication simple services 
         </p>
         <div>
           <LoginButton>
